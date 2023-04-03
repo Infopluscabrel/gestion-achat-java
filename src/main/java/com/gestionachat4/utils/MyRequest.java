@@ -1,4 +1,4 @@
-package com.gestionachat4.entities;
+package com.gestionachat4.utils;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -81,6 +81,7 @@ public class MyRequest {
 
 		public int getCodeachat() {
 			
+			/*
 			 Random rand = new Random(); 
 		      // Setting the upper bound to generate the
 		      // random numbers in specific range
@@ -89,6 +90,8 @@ public class MyRequest {
 		      // using nextInt()
 		      int int_random = rand.nextInt(upperbound); 
 			return int_random;
+			*/
+			return this.codeachat; 
 		}
 
 		public void setCodeachat(int codeachat) {

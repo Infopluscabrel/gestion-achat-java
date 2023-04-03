@@ -31,9 +31,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.gestionachat4.entities.Acheter;
 import com.gestionachat4.entities.Client;
-import com.gestionachat4.entities.MyRequest;
 import com.gestionachat4.entities.Produit;
 import com.gestionachat4.repository.ClientRepository;
+import com.gestionachat4.utils.MyRequest;
+import com.gestionachat4.utils.MyResponseAchat;
 
 
 @RestController
@@ -68,7 +69,7 @@ public class ClientController {
 		public ResponseEntity<?> allClient() throws Exception {
 		
 		 
-		return new ResponseEntity<>(clientRepository.findAll()	 , HttpStatus.OK) ;
+		return new ResponseEntity<>(clientRepository.getAllClient()	 , HttpStatus.OK) ;
 		}
 	
 	/*@RequestMapping(
@@ -233,7 +234,7 @@ public class ClientController {
 
 
 		Query query = entityManager.createNativeQuery(
-		    "SELECT produit.codeproduit as codeproduit ,produit.label as label , produit.pu as pu, acheter.qte as qte"
+		    "SELECT produit.codeproduit  ,produit.label  , produit.pu , acheter.qte "
 		    + " From produit , acheter , client "
 		    + " where   acheter.codeproduit=produit.codeproduit "
 		    + " And acheter.codeclient= client.codeclient "

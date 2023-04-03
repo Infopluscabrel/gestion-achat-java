@@ -16,8 +16,10 @@ import com.gestionachat4.entities.Produit;
 @Repository
 public interface ClientRepository extends JpaRepository<Client , Short > {
 	// liste des utilisateurs 
-	@Query(" SELECT c FROM Client c") 
-	List<Client> getAllClient() ;
+	@Query(
+			  value = "SELECT u.codeclient , u.password , u.nom , u.email , u.sexe , u.login ,u.datenaiss FROM Client u ", 
+			  nativeQuery = true)
+	List<Client> getAllClient();
 	
 	// recuperer un user a partir de son code 
 		@Query(" SELECT c FROM Client c WHERE c.codeclient=:codeclient") 

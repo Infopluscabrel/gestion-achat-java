@@ -61,9 +61,10 @@ public class Client implements Serializable {
     @Column(name = "datenaiss")
     @Temporal(TemporalType.TIMESTAMP)
     private Date datenaiss;
+    /*
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "client")
     private List<Acheter> acheterList;
-
+*/
     public Client() {
     }
 
@@ -134,7 +135,7 @@ public class Client implements Serializable {
     public void setDatenaiss(Date datenaiss) {
         this.datenaiss = datenaiss;
     }
-
+/*
     public List<Acheter> getAcheterList() {
         return acheterList;
     }
@@ -142,7 +143,7 @@ public class Client implements Serializable {
     public void setAcheterList(List<Acheter> acheterList) {
         this.acheterList = acheterList;
     }
-
+*/
     @Override
     public int hashCode() {
         int hash = 0;

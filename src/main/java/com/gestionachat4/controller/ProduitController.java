@@ -45,7 +45,7 @@ public class ProduitController {
 		public ResponseEntity<?> allproduit() throws Exception {
 		
 		 
-		return new ResponseEntity<>(produitRepository.getAllProduit()	 , HttpStatus.OK) ;
+		return new ResponseEntity<>(produitRepository.findAllProducts()	 , HttpStatus.OK) ;
 		}
 	
 	

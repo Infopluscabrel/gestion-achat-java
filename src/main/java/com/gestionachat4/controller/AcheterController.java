@@ -16,9 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.gestionachat4.entities.Acheter;
 import com.gestionachat4.entities.AcheterPK;
-import com.gestionachat4.entities.MyRequest;
-
 import com.gestionachat4.repository.AcheterRepository;
+import com.gestionachat4.utils.MyRequest;
 
 
 @RestController

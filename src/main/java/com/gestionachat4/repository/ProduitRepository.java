@@ -14,9 +14,11 @@ import com.gestionachat4.entities.Produit;
 @Repository
 public interface ProduitRepository extends JpaRepository<Produit , Short > {
 	// liste des utilisateurs 
-	@Query(" SELECT c FROM Produit c") 
-	List<Produit> getAllProduit() ;
+	/*@Query(" SELECT c FROM Produit c") 
+	List<Produit> getAllProduit() ;*/
 	
+	@Query("SELECT p.codeproduit, p.label, p.pu, p.qtestock, p.qteseuil FROM Produit p")
+    List<Object[]> findAllProducts();
 	// recuperer un user a partir de son code 
 		@Query(" SELECT c FROM Produit c WHERE c.codeproduit=:codeproduit") 
 		 Optional<Produit> findById(@Param("codeproduit") Short codeproduit);

@@ -53,6 +53,7 @@ public class Produit implements Serializable {
     @Basic(optional = false)
     @Column(name = "qteseuil")
     private int qteseuil;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "produit")
     private List<Acheter> acheterList;
 

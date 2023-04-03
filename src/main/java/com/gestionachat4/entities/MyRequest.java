@@ -2,6 +2,7 @@ package com.gestionachat4.entities;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 import java.util.Random;
 
 import javax.persistence.Basic;
@@ -24,6 +25,7 @@ public class MyRequest {
 	    private int qteseuil;
 
 	 private    Date dateachat ;
+	 private BigDecimal pu ;
 	    
 	    
 	    
@@ -46,6 +48,15 @@ public class MyRequest {
 
 		
 		
+		public MyRequest(short codeproduit,String label,BigDecimal pu , int qte ) {
+			// TODO Auto-generated constructor stub
+			
+			this.codeproduit = codeproduit ;
+			this.pu = pu ;
+			this.qte =qte;
+			this.label = label;
+		}
+
 		public Date getDateachat() {
 			return dateachat;
 		}
@@ -122,6 +133,16 @@ public class MyRequest {
 
 		public void setQteseuil(int qteseuil) {
 			this.qteseuil = qteseuil;
+		}
+
+		public List<MyRequest> getElements() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		public String getAlias() {
+			// TODO Auto-generated method stub
+			return null;
 		}
 	    
 	    

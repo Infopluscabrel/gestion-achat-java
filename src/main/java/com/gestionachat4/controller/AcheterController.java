@@ -2,6 +2,8 @@ package com.gestionachat4.controller;
 
 
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -40,7 +42,7 @@ public class AcheterController {
 		
 	
 		
-		Acheter acheter = new Acheter(acheterpk , achat.getQte() , achat.getDateachat()) ;
+		Acheter acheter = new Acheter(acheterpk , achat.getQte() , new Date()) ;
 		
 		acheterRepository.save(acheter)	 ;
 		

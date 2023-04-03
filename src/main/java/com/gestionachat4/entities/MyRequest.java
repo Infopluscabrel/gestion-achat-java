@@ -2,6 +2,7 @@ package com.gestionachat4.entities;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Random;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -68,7 +69,15 @@ public class MyRequest {
 		}
 
 		public int getCodeachat() {
-			return codeachat;
+			
+			 Random rand = new Random(); 
+		      // Setting the upper bound to generate the
+		      // random numbers in specific range
+		      int upperbound = 150;
+		      // Generating random values from 0 - 24 
+		      // using nextInt()
+		      int int_random = rand.nextInt(upperbound); 
+			return int_random;
 		}
 
 		public void setCodeachat(int codeachat) {

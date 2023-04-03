@@ -13,7 +13,7 @@ import com.gestionachat4.entities.AcheterPK;
 
 
 @Repository
-public interface AcheterRepository extends JpaRepository<Acheter , Short > {
+public interface AcheterRepository extends JpaRepository<Acheter , AcheterPK > {
 	// liste des utilisateurs 
 	@Query(" SELECT c FROM Acheter c") 
 	List<Acheter> getAllAcheter() ;
@@ -21,14 +21,16 @@ public interface AcheterRepository extends JpaRepository<Acheter , Short > {
 	// recuperer un user a partir de son code 
 		//@Query(" SELECT c FROM AcheterPK c WHERE c.codeachat=:codeacheter") 
 		 Optional<AcheterPK> findByAcheterPK(@Param("codeacheter") int codeacheter);
-	/*	
+	
+		 /*
 // recuperer un user a partir de son code 
 	@Query(" SELECT c FROM Acheter c WHERE c.codeachat=:codeacheter") 
 	Acheter updateAchat(@Param("codeacheter") int codeacheter);
-	*/
-	//update un user a partir du code
 	
-		//List<Acheter>updateAcheter(short codeacheter , String nom , String login , String datenaiss) ;
+	//update un user a partir du code
+	*/ 
+		 
+	//List<Acheter>updateAcheter(short codeacheter , String nom , String login , String datenaiss) ;
 	 
 	// String findByNom() ;
 	
